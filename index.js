@@ -38,14 +38,18 @@ settings.forEach(
                 }
                 var to = e.signUrl(e.to);
                 console.debug(`${req.url}=>${to}`);
+               var templates =  e.template(req.body);
+
+               templates.forEach(function(v,index){
+
+                console.log(v);
                 fetch(to,
                     {
                         method: "POST",
-                        body: JSON.stringify(e.template(req.body)),
+                        body: JSON.stringify(v),
                         headers: {
                             'Content-Type': "application/json"
                         }
-
                     }).then(
                         res => res.text()
                     ).then(
@@ -55,6 +59,11 @@ settings.forEach(
                     ).finally(
                         () => res.send("ok")
                     );
+               });
+
+
+
+                
             }
         )
     }
