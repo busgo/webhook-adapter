@@ -42,7 +42,8 @@ settings.forEach(
 
                templates.forEach(function(v,index){
 
-                console.log(v);
+                console.log("==========v==========",v);
+                
                 fetch(to,
                     {
                         method: "POST",
@@ -57,11 +58,11 @@ settings.forEach(
                     ).catch(
                         error => console.warn(`${req.url}=>${to}:${error}`)
                     ).finally(
-                        () => res.send("ok")
+                       // () => res.send("ok")
                     );
                });
 
-
+               res.send("ok");
 
                 
             }
