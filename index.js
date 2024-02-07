@@ -43,6 +43,12 @@ settings.forEach(
                templates.forEach(function(v,index){
 
                 console.log("==========v==========",v);
+
+                console.log("==========vxxxxx==========",JSON.stringify(v));
+
+
+
+
                 
                 fetch(to,
                     {
